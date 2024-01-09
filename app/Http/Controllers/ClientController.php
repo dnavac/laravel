@@ -55,6 +55,8 @@ class ClientController extends Controller
      */
     public function edit(string $id)
     {
+        $client = Client::find($id);
+        return view('client.edit', compact('client'));
     }
 
     /**
@@ -62,16 +64,17 @@ class ClientController extends Controller
      */
     public function update(Request $request, Client $client)
     {
-        // $request->validate(
-        //     [
-        //         'firstName'=>'required',
-        //         'lastName'=> 'required',
-        //         'email'=> 'required',
-        //     ]
-        // );
-        // $client->update($request->all());
+        $request->validate(
+            [
+                'firstName'=>'required',
+                'lastName'=> 'required',
+                'email'=> 'required'
+            ]
+        );
+        $client->update($request->all());
 
-        // return redirect()->route('clients.index');
+        return redirect()->route('client.index');
+
     }
 
     /**
