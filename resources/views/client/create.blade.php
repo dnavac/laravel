@@ -7,7 +7,7 @@
             <div class="col"></div>
             <div class="col">
                 
-                <form action="{{ route('clients.update', ['client' => $client->id]) }}" method="POST">
+                <form action="{{ route('client.store') }}" method="POST">
                     @csrf
                     <div>
                         <label for="">Nombre: </label>

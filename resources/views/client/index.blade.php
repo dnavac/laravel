@@ -6,7 +6,7 @@
 
     <div class="container">
         <br>
-        <a class="btn btn-primary" href="{{ route('clients.create') }}">Nuevo cliente</a>
+        <a class="btn btn-primary" href="{{ route('client.create') }}">Nuevo cliente</a>
 
         <table class="table">
             <tr>

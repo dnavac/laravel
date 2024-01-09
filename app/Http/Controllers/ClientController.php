@@ -13,7 +13,7 @@ class ClientController extends Controller
     public function index()
     {
         $clients= client::latest()->paginate(5);
-        return view("clients.index", compact("clients"))->with('i', (request()->input('page',1)-1)*5);
+        return view("client.index", compact("clients"))->with('i', (request()->input('page',1)-1)*5);
         
     }
 
@@ -22,7 +22,7 @@ class ClientController extends Controller
      */
     public function create()
     {
-        return view('clients.create');
+        return view('client.create');
     }
 
     /**
@@ -39,7 +39,7 @@ class ClientController extends Controller
         );
         Client::create($request->all());
 
-        return redirect()->route('clients.index');
+        return redirect()->route('client.index');
     }
 
     /**
