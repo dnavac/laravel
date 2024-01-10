@@ -45,9 +45,9 @@ class ClientController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(client $client)
     {
-        //
+        return view('client.show', compact('client'));
     }
 
     /**
@@ -80,8 +80,9 @@ class ClientController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Client $client)
     {
-        //
+        $client->delete();
+        return redirect()->route('client.index');
     }
 }
