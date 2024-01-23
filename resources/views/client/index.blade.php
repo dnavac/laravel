@@ -10,8 +10,6 @@
              -->
         <div class="btn-group col-4" role="group" aria-label="Basic example">
             <a class="btn btn-primary" href="{{ route('client.create') }}">Nuevo cliente</a>
-            <a class="btn btn-primary">Middle</a>
-            <a class="btn btn-primary">Right</a>
         </div>
 
         <table class="table">
